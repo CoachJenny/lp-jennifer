@@ -1,0 +1,737 @@
+/* ============================================================
+   styles.css — Quiz "Tes réflexes sous pression"
+   Reproduction stricte des tokens de brand-tokens.json
+   + ajouts pour le flow UX (une question à la fois, écrans)
+   ============================================================ */
+
+/* ---------- 1. RESET ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+}
+
+input {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- 2. ROOT TOKENS (verbatim) ---------- */
+:root {
+  --bg: #080720;
+  --bg2: #0f0d35;
+  --coral: #6B3FA0;
+  --coral-light: #9B6FCF;
+  --gold: #FFE66D;
+  --white: #ffffff;
+  --white70: rgba(255,255,255,0.7);
+  --white40: rgba(255,255,255,0.4);
+  --white15: rgba(255,255,255,0.15);
+  --white08: rgba(255,255,255,0.08);
+  --card-gradient: linear-gradient(135deg, #FFE66D 0%, #FF6B6B 100%);
+  --radius: 20px;
+  --radius-sm: 12px;
+}
+
+/* ---------- 3. BODY + HALOS COSMIQUES (verbatim) ---------- */
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -30%;
+  left: -20%;
+  width: 70%;
+  height: 70%;
+  background: radial-gradient(ellipse, rgba(107,63,160,0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  bottom: -20%;
+  right: -20%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(ellipse, rgba(100,80,200,0.1) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- 4. LAYOUT ---------- */
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 5rem;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin-bottom: 3.5rem;
+  opacity: 0.9;
+}
+
+/* ---------- 5. SCREENS (state machine) ---------- */
+.screen { display: none; }
+.screen.is-active { display: block; }
+
+/* Slide transition wrapper for question screens */
+.slide-in-right {
+  animation: slideInRight 300ms ease-out both;
+}
+.slide-in-left {
+  animation: slideInLeft 300ms ease-out both;
+}
+
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-24px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 6. WELCOME SCREEN (intro) ---------- */
+.intro-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.intro-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 5vw, 38px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.intro-title span { color: var(--gold); }
+
+.intro-sub {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--white70);
+  max-width: 560px;
+  margin-bottom: 2rem;
+}
+
+/* Discreet promise bullets */
+.intro-promises {
+  list-style: none;
+  margin-bottom: 2.5rem;
+  padding: 0;
+}
+.intro-promises li {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--white70);
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.intro-promises li::before {
+  content: '·';
+  color: var(--coral);
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+/* ---------- 7. PROGRESS BAR (verbatim, sticky) ---------- */
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 2.5rem;
+}
+
+.progress-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 1rem 0 0.75rem;
+  margin: -1rem 0 1.25rem;
+  /* Pas de fond : les halos cosmiques restent visibles.
+     La barre (3px) est assez fine pour ne pas créer de gêne visuelle
+     quand le contenu scrolle dessous. */
+}
+
+.progress-track {
+  flex: 1;
+  height: 3px;
+  background: var(--white15);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral), var(--gold));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+.progress-label {
+  font-size: 13px;
+  color: var(--white40);
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: right;
+}
+
+/* ---------- 8. QUESTION SCREENS (verbatim block) ---------- */
+.question-block {
+  margin-bottom: 3rem;
+  animation: fadeUp 0.4s ease both;
+}
+
+.question-num {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.75rem;
+}
+
+.question-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(18px, 3.5vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+/* ---------- 9. OPTIONS (verbatim) ---------- */
+.option {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: var(--white08);
+  border: 1px solid var(--white15);
+  border-radius: var(--radius-sm);
+  padding: 1.125rem 1.25rem;
+  margin-bottom: 0.625rem;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--white70);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Inter', sans-serif;
+}
+
+.option:hover {
+  background: rgba(107,63,160,0.1);
+  border-color: rgba(107,63,160,0.4);
+  color: var(--white);
+  transform: translateX(4px);
+}
+
+.option.selected {
+  background: rgba(107,63,160,0.15);
+  border-color: var(--coral);
+  color: var(--white);
+}
+
+.option.selected::before {
+  content: '→ ';
+  color: var(--coral);
+  font-weight: 600;
+}
+
+/* ---------- 10. NAVIGATION (back button) ---------- */
+.nav-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.btn-back {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--white40);
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+.btn-back:hover {
+  color: var(--white70);
+}
+
+/* ---------- 11. CTA BUTTON (verbatim btn-submit) ---------- */
+.btn-submit {
+  width: 100%;
+  padding: 1.125rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, var(--coral), #FF6B6B);
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-submit:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-submit:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(107,63,160,0.4);
+}
+
+/* ---------- 12. EMAIL GATE SCREEN ---------- */
+.gate-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 28px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--white);
+  margin-bottom: 0.875rem;
+}
+
+.gate-sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--white70);
+  margin-bottom: 2rem;
+}
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field input[type="text"],
+.field input[type="email"] {
+  width: 100%;
+  padding: 1rem 1.125rem;
+  background: var(--white08);
+  border: 1px solid var(--white15);
+  border-radius: var(--radius-sm);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  transition: all 0.2s ease;
+}
+
+.field input::placeholder {
+  color: var(--white40);
+}
+
+.field input:focus {
+  outline: none;
+  background: rgba(107,63,160,0.08);
+  border-color: rgba(107,63,160,0.4);
+}
+
+/* Custom checkbox */
+.checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin: 1.25rem 0 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-row input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-box {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--white15);
+  border-radius: 4px;
+  background: var(--white08);
+  position: relative;
+  margin-top: 2px;
+  transition: all 0.2s ease;
+}
+
+.checkbox-row:hover .checkbox-box {
+  border-color: rgba(107,63,160,0.4);
+}
+
+.checkbox-row input[type="checkbox"]:checked + .checkbox-box {
+  background: var(--coral);
+  border-color: var(--coral);
+}
+
+.checkbox-row input[type="checkbox"]:checked + .checkbox-box::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid var(--white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-label {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--white70);
+}
+
+/* ---------- 13. RESULT SCREEN (verbatim) ---------- */
+.result-eyebrow {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.result-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 4vw, 32px);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.result-intro {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--white70);
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 2.5rem;
+}
+
+.score-card {
+  background: var(--white08);
+  border: 1px solid var(--white15);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.125rem;
+}
+
+.score-card-label {
+  font-size: 12px;
+  color: var(--white40);
+  margin-bottom: 0.625rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.score-bar-bg {
+  background: var(--white15);
+  border-radius: 3px;
+  height: 4px;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 4px;
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.8s ease;
+}
+
+.score-level {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Playfair Display', serif;
+}
+
+.section-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white40);
+  border-bottom: 1px solid var(--white15);
+  padding-bottom: 0.625rem;
+  margin: 2rem 0 1.25rem;
+}
+
+.profile-card {
+  background: var(--card-gradient);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.profile-card-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(8,7,32,0.85);
+}
+
+.tension-block {
+  background: var(--white08);
+  border: 1px solid var(--white15);
+  border-left: 3px solid var(--coral);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.tension-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--coral);
+  margin-bottom: 0.5rem;
+}
+
+.tension-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--white70);
+}
+
+/* ---------- 14. CTA BLOCK (verbatim) ---------- */
+.cta-block {
+  background: linear-gradient(135deg, rgba(107,63,160,0.15), rgba(255,230,109,0.15));
+  border: 1px solid rgba(107,63,160,0.3);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.cta-photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 1.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--white08);
+  border: 1px dashed var(--white15);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white40);
+}
+
+.cta-photo-placeholder::before {
+  content: 'Photo Jennifer';
+}
+
+.cta-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.cta-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--white70);
+  margin-bottom: 1.5rem;
+}
+
+.btn-cta {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, var(--coral), #FF6B6B);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(107,63,160,0.4);
+}
+
+.cta-fineprint {
+  display: block;
+  margin-top: 0.875rem;
+  font-size: 13px;
+  color: var(--white40);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 15. SECONDARY ACTIONS ---------- */
+.btn-download {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 50px;
+  border: 1px solid rgba(107,63,160,0.4);
+  background: transparent;
+  color: var(--coral);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-download:hover {
+  background: rgba(107,63,160,0.1);
+  border-color: var(--coral);
+}
+
+.share-card {
+  display: block;
+  margin-top: 1.5rem;
+  padding: 1.75rem 1.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,230,109,0.18), rgba(107,63,160,0.12));
+  border: 1px solid rgba(255,230,109,0.35);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(255,230,109,0.08);
+}
+
+.share-card-eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.share-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.share-card-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--white70);
+  margin-bottom: 1.5rem;
+}
+
+.btn-share-card {
+  display: inline-block;
+  padding: 0.875rem 1.75rem;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--gold), var(--coral));
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 16px rgba(255,230,109,0.25);
+}
+
+.btn-share-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255,230,109,0.4);
+}
+
+.btn-retry {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  border-radius: 50px;
+  border: 1px solid var(--white15);
+  background: transparent;
+  color: var(--white40);
+  font-size: 15px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  margin-top: 2rem;
+  transition: all 0.2s ease;
+}
+
+.btn-retry:hover {
+  border-color: var(--white40);
+  color: var(--white70);
+}
+
+.footer-mark {
+  display: block;
+  text-align: center;
+  margin-top: 3rem;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white40);
+}
+
+/* ---------- 16. RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .score-grid { grid-template-columns: 1fr; }
+  .page { padding: 2rem 1rem 4rem; }
+  .logo { margin-bottom: 2.5rem; }
+  .progress-sticky { padding: 0.75rem 0 0.5rem; margin: -0.75rem 0 1rem; }
+  .cta-block { padding: 1.5rem 1.25rem; }
+  .profile-card { padding: 1.5rem; }
+  .btn-share { min-width: 0; }
+}

@@ -1,0 +1,947 @@
+{
+  "_meta": {
+    "source_file": "fichiersourcequiz.html",
+    "extracted_at": "2026-04-08",
+    "rule": "Pixel-perfect verbatim extraction. Aucune simplification. Toutes les valeurs rgba/opacity/gradients sont préservées telles quelles. Ce fichier est la source de vérité visuelle — ne JAMAIS substituer une valeur par une 'équivalente'.",
+    "_DEPRECATED_COLORS_FONTS": "Mai 2026 — les couleurs (coral/gold) et fonts (Syne/DM Sans) listées ci-dessous ne sont PLUS la source de vérité. Refonte brand alignée sur nahara-coaching.com : --coral=#6B3FA0 (violet), --gold=#FFE66D (jaune), fonts Playfair Display + Inter. Les espacements, radius, animations, structure des composants restent inchangés. Voir styles.css pour les valeurs vivantes."
+  },
+
+  "colors": {
+    "css_variables": {
+      "--bg": {
+        "hex": "#080720",
+        "rgb": "rgb(8, 7, 32)",
+        "usage": "Background principal du body, couleur du texte sur la profile-card (gradient coral→gold), texte foncé sur fond clair"
+      },
+      "--bg2": {
+        "hex": "#0f0d35",
+        "rgb": "rgb(15, 13, 53)",
+        "usage": "Variable de background secondaire déclarée dans :root (déclarée mais non utilisée directement dans le CSS extrait — à conserver pour cohérence brand)"
+      },
+      "--coral": {
+        "hex": "#F4785A",
+        "rgb": "rgb(244, 120, 90)",
+        "usage": "Couleur accent principale : eyebrow text, question-num, intro-title span:hover, option selected border, btn-submit gradient start, btn-cta gradient start, btn-download text/border, tension-block border-left, tension-title text, scoring color pour 'stress' (Accueil de la pression)"
+      },
+      "--coral-light": {
+        "hex": "#f7917a",
+        "rgb": "rgb(247, 145, 122)",
+        "usage": "Variable déclarée dans :root (non utilisée directement dans le CSS extrait — à conserver)"
+      },
+      "--gold": {
+        "hex": "#E8A838",
+        "rgb": "rgb(232, 168, 56)",
+        "usage": "Couleur accent secondaire : intro-title <span> (le mot 'vraiment'), progress-fill gradient end, scoring color pour 'flex' (Quand les repères bougent)"
+      },
+      "--white": {
+        "hex": "#ffffff",
+        "rgb": "rgb(255, 255, 255)",
+        "usage": "Couleur de texte principale (body, logo, intro-title, option:hover/selected, btn-submit, cta-title, btn-cta)"
+      },
+      "--white70": {
+        "rgba": "rgba(255, 255, 255, 0.7)",
+        "usage": "Texte secondaire/sous-titres : intro-sub, option (état normal), result-intro, tension-text, cta-text, btn-retry:hover"
+      },
+      "--white40": {
+        "rgba": "rgba(255, 255, 255, 0.4)",
+        "usage": "Texte tertiaire/labels : progress-label, score-card-label, section-label, btn-retry text, btn-retry:hover border"
+      },
+      "--white15": {
+        "rgba": "rgba(255, 255, 255, 0.15)",
+        "usage": "Bordures subtiles et background de progress-track / score-bar-bg : option border, score-card border, section-label border-bottom, tension-block border, question-block-result border, btn-retry border"
+      },
+      "--white08": {
+        "rgba": "rgba(255, 255, 255, 0.08)",
+        "usage": "Background subtil pour les cartes : option background, score-card background, tension-block background, question-block-result background"
+      }
+    },
+
+    "inline_colors_not_in_variables": {
+      "coral_dark_gradient_end": {
+        "hex": "#f0704a",
+        "rgb": "rgb(240, 112, 74)",
+        "usage": "Fin du gradient 135deg du btn-submit et btn-cta (linear-gradient(135deg, var(--coral), #f0704a))"
+      },
+      "card_gradient_mid": {
+        "hex": "#f0a060",
+        "rgb": "rgb(240, 160, 96)",
+        "usage": "Stop intermédiaire (50%) du --card-gradient utilisé sur la profile-card"
+      },
+      "card_gradient_end": {
+        "hex": "#e8c870",
+        "rgb": "rgb(232, 200, 112)",
+        "usage": "Stop final (100%) du --card-gradient utilisé sur la profile-card"
+      },
+      "coral_glow_radial_top": {
+        "rgba": "rgba(244, 120, 90, 0.12)",
+        "usage": "Stop 0% du radial-gradient ::before du body (halo coral en haut à gauche)"
+      },
+      "purple_glow_radial_bottom": {
+        "rgba": "rgba(100, 80, 200, 0.1)",
+        "usage": "Stop 0% du radial-gradient ::after du body (halo violet en bas à droite). Note : c'est la SEULE occurrence de ce violet dans tout le fichier."
+      },
+      "coral_hover_bg": {
+        "rgba": "rgba(244, 120, 90, 0.1)",
+        "usage": "Background de option:hover et de btn-download:hover"
+      },
+      "coral_hover_border": {
+        "rgba": "rgba(244, 120, 90, 0.4)",
+        "usage": "Border de option:hover et de btn-download (border par défaut)"
+      },
+      "coral_selected_bg": {
+        "rgba": "rgba(244, 120, 90, 0.15)",
+        "usage": "Background de option.selected et stop start du gradient cta-block"
+      },
+      "coral_shadow": {
+        "rgba": "rgba(244, 120, 90, 0.4)",
+        "usage": "box-shadow du btn-submit:hover et btn-cta:hover (0 8px 30px rgba(244,120,90,0.4))"
+      },
+      "coral_cta_border": {
+        "rgba": "rgba(244, 120, 90, 0.3)",
+        "usage": "Border du cta-block (1px solid rgba(244,120,90,0.3))"
+      },
+      "gold_cta_bg": {
+        "rgba": "rgba(232, 168, 56, 0.15)",
+        "usage": "Stop end du gradient background du cta-block"
+      },
+      "bg_85_overlay": {
+        "rgba": "rgba(8, 7, 32, 0.85)",
+        "usage": "Couleur du texte profile-card-text (bg principal à 85% sur le gradient orange/gold de la profile-card)"
+      }
+    },
+
+    "scoring_colors_javascript": {
+      "_note": "Définies dans le compMeta JS (lignes 530-535). Utilisées en inline style dans les score-bar-fill et score-level. NE PAS modifier — chacune représente une dimension de l'évaluation.",
+      "stress": {
+        "hex": "#F4785A",
+        "label": "Accueil de la pression",
+        "usage": "Score-bar-fill et score-level pour la dimension 'stress' (identique à --coral)"
+      },
+      "flex": {
+        "hex": "#E8A838",
+        "label": "Quand les repères bougent",
+        "usage": "Score-bar-fill et score-level pour la dimension 'flex' (identique à --gold)"
+      },
+      "resol": {
+        "hex": "#9B8EF0",
+        "rgb": "rgb(155, 142, 240)",
+        "label": "De l'obstacle à la solution",
+        "usage": "Score-bar-fill et score-level pour la dimension 'resol' (violet — UNIQUE à cette dimension, n'apparaît nulle part ailleurs dans le CSS)"
+      },
+      "rel": {
+        "hex": "#5DCAA5",
+        "rgb": "rgb(93, 202, 165)",
+        "label": "La relation aux autres",
+        "usage": "Score-bar-fill et score-level pour la dimension 'rel' (vert/jade — UNIQUE à cette dimension)"
+      }
+    },
+
+    "pdf_export_colors": {
+      "_note": "Couleurs utilisées UNIQUEMENT dans le HTML d'export PDF inline (lignes 747-763). Mode clair, palette différente du quiz dark mode.",
+      "pdf_text_dark": {
+        "hex": "#1a1a2e",
+        "usage": "PDF body color, h1 color"
+      },
+      "pdf_text_555": {
+        "hex": "#555",
+        "usage": "PDF intro text"
+      },
+      "pdf_text_444": {
+        "hex": "#444",
+        "usage": "PDF tension-text"
+      },
+      "pdf_text_333": {
+        "hex": "#333",
+        "usage": "PDF card paragraph"
+      },
+      "pdf_text_999": {
+        "hex": "#999",
+        "usage": "PDF score-label"
+      },
+      "pdf_text_aaa": {
+        "hex": "#aaa",
+        "usage": "PDF section label, footer"
+      },
+      "pdf_border_eee": {
+        "hex": "#eee",
+        "usage": "PDF score-item border, section border-bottom, footer border-top"
+      },
+      "pdf_card_gradient_start": {
+        "hex_with_alpha": "#f4785a15",
+        "equivalent_rgba": "rgba(244, 120, 90, 0.082)",
+        "usage": "Stop start du gradient PDF .card (8 chiffres hex = #RRGGBBAA, 15 ≈ 8% alpha)"
+      },
+      "pdf_card_gradient_end": {
+        "hex_with_alpha": "#e8a83815",
+        "equivalent_rgba": "rgba(232, 168, 56, 0.082)",
+        "usage": "Stop end du gradient PDF .card"
+      },
+      "pdf_logo_coral": {
+        "hex": "#F4785A",
+        "usage": "PDF logo color (identique au coral du quiz)"
+      },
+      "pdf_eyebrow_coral": {
+        "hex": "#F4785A",
+        "usage": "PDF eyebrow color"
+      },
+      "pdf_tension_border_coral": {
+        "hex": "#F4785A",
+        "usage": "PDF .tension border-left"
+      },
+      "pdf_tension_title_coral": {
+        "hex": "#F4785A",
+        "usage": "PDF .tension-title color"
+      }
+    }
+  },
+
+  "typography": {
+    "_fonts_loaded": "https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap",
+    "font_families": {
+      "display": {
+        "name": "Syne",
+        "fallback": "sans-serif",
+        "weights_loaded": [400, 500, 600, 700],
+        "usage": "Titres, logo, scores, boutons (composants à forte présence visuelle)"
+      },
+      "body": {
+        "name": "DM Sans",
+        "fallback": "sans-serif",
+        "weights_loaded": [300, 400, 500],
+        "italics_loaded": [300, 400],
+        "usage": "Texte courant, options, paragraphes"
+      }
+    },
+
+    "elements": {
+      "body": {
+        "font_family": "'DM Sans', sans-serif",
+        "color": "var(--white) (#ffffff)",
+        "background": "var(--bg) (#080720)",
+        "min_height": "100vh"
+      },
+      "logo": {
+        "selector": ".logo",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "15px",
+        "font_weight": 600,
+        "color": "var(--white)",
+        "letter_spacing": "0.02em",
+        "margin_bottom": "3.5rem",
+        "opacity": 0.9
+      },
+      "intro_eyebrow": {
+        "selector": ".intro-eyebrow",
+        "font_size": "11px",
+        "font_weight": 500,
+        "letter_spacing": "0.12em",
+        "text_transform": "uppercase",
+        "color": "var(--coral) (#F4785A)",
+        "margin_bottom": "1rem"
+      },
+      "intro_title": {
+        "selector": ".intro-title",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "clamp(26px, 5vw, 38px)",
+        "font_weight": 700,
+        "line_height": 1.2,
+        "color": "var(--white)",
+        "margin_bottom": "1.25rem",
+        "span_color": "var(--gold) (#E8A838)"
+      },
+      "intro_sub": {
+        "selector": ".intro-sub",
+        "font_size": "16px",
+        "line_height": 1.75,
+        "color": "var(--white70)",
+        "max_width": "560px",
+        "margin_bottom": "2.5rem"
+      },
+      "progress_label": {
+        "selector": ".progress-label",
+        "font_size": "12px",
+        "color": "var(--white40)",
+        "white_space": "nowrap",
+        "min_width": "60px",
+        "text_align": "right"
+      },
+      "question_num": {
+        "selector": ".question-num",
+        "font_size": "11px",
+        "font_weight": 500,
+        "letter_spacing": "0.1em",
+        "text_transform": "uppercase",
+        "color": "var(--coral)",
+        "margin_bottom": "0.75rem"
+      },
+      "option": {
+        "selector": ".option",
+        "font_family": "'DM Sans', sans-serif",
+        "font_size": "14px",
+        "line_height": 1.7,
+        "color": "var(--white70)",
+        "text_align": "left",
+        "color_hover": "var(--white)",
+        "color_selected": "var(--white)"
+      },
+      "btn_submit": {
+        "selector": ".btn-submit",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "16px",
+        "font_weight": 600,
+        "color": "var(--white)",
+        "letter_spacing": "0.02em"
+      },
+      "result_eyebrow": {
+        "selector": ".result-eyebrow",
+        "font_size": "11px",
+        "font_weight": 500,
+        "letter_spacing": "0.12em",
+        "text_transform": "uppercase",
+        "color": "var(--coral)",
+        "margin_bottom": "1rem"
+      },
+      "result_title": {
+        "selector": ".result-title",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "clamp(22px, 4vw, 32px)",
+        "font_weight": 700,
+        "line_height": 1.25,
+        "margin_bottom": "1rem"
+      },
+      "result_intro": {
+        "selector": ".result-intro",
+        "font_size": "15px",
+        "line_height": 1.75,
+        "color": "var(--white70)",
+        "margin_bottom": "2.5rem",
+        "font_style": "italic"
+      },
+      "score_card_label": {
+        "selector": ".score-card-label",
+        "font_size": "11px",
+        "color": "var(--white40)",
+        "margin_bottom": "0.625rem",
+        "letter_spacing": "0.04em",
+        "text_transform": "uppercase"
+      },
+      "score_level": {
+        "selector": ".score-level",
+        "font_size": "13px",
+        "font_weight": 500,
+        "font_family": "'Syne', sans-serif",
+        "color": "inline (depend de la dimension : #F4785A | #E8A838 | #9B8EF0 | #5DCAA5)"
+      },
+      "section_label": {
+        "selector": ".section-label",
+        "font_size": "11px",
+        "font_weight": 500,
+        "letter_spacing": "0.1em",
+        "text_transform": "uppercase",
+        "color": "var(--white40)",
+        "border_bottom": "1px solid var(--white15)",
+        "padding_bottom": "0.625rem",
+        "margin": "2rem 0 1.25rem"
+      },
+      "profile_card_title": {
+        "selector": ".profile-card-title",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "16px",
+        "font_weight": 700,
+        "color": "var(--bg) (#080720)",
+        "margin_bottom": "0.625rem",
+        "_note": "Classe définie dans le CSS mais NON utilisée dans le HTML rendu (le rendu utilise uniquement .profile-card-text)"
+      },
+      "profile_card_text": {
+        "selector": ".profile-card-text",
+        "font_size": "14px",
+        "line_height": 1.75,
+        "color": "rgba(8, 7, 32, 0.85)"
+      },
+      "tension_title": {
+        "selector": ".tension-title",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "14px",
+        "font_weight": 600,
+        "color": "var(--coral)",
+        "margin_bottom": "0.5rem"
+      },
+      "tension_text": {
+        "selector": ".tension-text",
+        "font_size": "14px",
+        "line_height": 1.75,
+        "color": "var(--white70)"
+      },
+      "cta_title": {
+        "selector": ".cta-title",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "20px",
+        "font_weight": 700,
+        "color": "var(--white)",
+        "margin_bottom": "0.75rem"
+      },
+      "cta_text": {
+        "selector": ".cta-text",
+        "font_size": "14px",
+        "line_height": 1.75,
+        "color": "var(--white70)",
+        "margin_bottom": "1.5rem"
+      },
+      "btn_cta": {
+        "selector": ".btn-cta",
+        "font_family": "'Syne', sans-serif",
+        "font_size": "15px",
+        "font_weight": 600,
+        "color": "var(--white)",
+        "letter_spacing": "0.02em",
+        "text_decoration": "none"
+      },
+      "btn_download": {
+        "selector": ".btn-download",
+        "font_family": "'DM Sans', sans-serif",
+        "font_size": "14px",
+        "color": "var(--coral)"
+      },
+      "btn_retry": {
+        "selector": ".btn-retry",
+        "font_family": "'DM Sans', sans-serif",
+        "font_size": "14px",
+        "color": "var(--white40)",
+        "color_hover": "var(--white70)"
+      }
+    }
+  },
+
+  "spacing": {
+    "_notes": "Le CSS utilise un mélange de px et de rem (1rem = 16px par défaut navigateur). Aucune échelle nommée n'est définie en variable — extraite ici par fréquence d'usage.",
+    "scale_inferred": {
+      "xxs": {
+        "values": ["0.375rem (6px)", "0.5rem (8px)"],
+        "usage": "Margin bas de petits éléments (.tension-title margin-bottom: 0.5rem)"
+      },
+      "xs": {
+        "values": ["0.625rem (10px)", "0.75rem (12px)"],
+        "usage": ".option margin-bottom (0.625rem), gap du score-grid (10px), .question-num margin-bottom (0.75rem), .cta-title margin-bottom (0.75rem)"
+      },
+      "sm": {
+        "values": ["1rem (16px)", "1.125rem (18px)"],
+        "usage": ".intro-eyebrow margin-bottom (1rem), .score-card padding (1rem 1.125rem), .option padding (1.125rem 1.25rem), .btn-submit padding (1.125rem)"
+      },
+      "md": {
+        "values": ["1.25rem (20px)", "1.5rem (24px)"],
+        "usage": ".intro-title margin-bottom (1.25rem), .tension-block padding (1.25rem), .question-block-result padding (1.25rem), .cta-text margin-bottom (1.5rem), .page padding-x (1.5rem)"
+      },
+      "lg": {
+        "values": ["1.75rem (28px)", "2rem (32px)"],
+        "usage": ".profile-card padding (1.75rem), .cta-block padding (2rem), .section-label margin-top (2rem), .btn-cta padding-x (2rem)"
+      },
+      "xl": {
+        "values": ["2.5rem (40px)", "3rem (48px)"],
+        "usage": ".intro-sub margin-bottom (2.5rem), .progress-wrap margin-bottom (2.5rem), .score-grid margin-bottom (2.5rem), .question-block margin-bottom (3rem), .page padding-top (3rem)"
+      },
+      "xxl": {
+        "values": ["3.5rem (56px)", "5rem (80px)"],
+        "usage": ".logo margin-bottom (3.5rem), .page padding-bottom (5rem)"
+      }
+    },
+    "raw_pixel_values": {
+      "gap_score_grid": "10px",
+      "gap_progress_wrap": "12px",
+      "score_card_label_letter_spacing": "0.04em",
+      "progress_track_height": "3px",
+      "score_bar_height": "4px"
+    },
+    "page_layout": {
+      "padding_desktop": "3rem 1.5rem 5rem",
+      "padding_mobile_480px": "2rem 1rem 4rem"
+    }
+  },
+
+  "borders_and_radius": {
+    "css_variables": {
+      "--radius": {
+        "value": "20px",
+        "usage": ".profile-card, .cta-block (cartes principales)"
+      },
+      "--radius-sm": {
+        "value": "12px",
+        "usage": ".option, .score-card, .tension-block (cartes secondaires/éléments)"
+      }
+    },
+    "inline_radius": {
+      "pill_button": {
+        "value": "50px",
+        "usage": ".btn-submit, .btn-cta, .btn-download, .btn-retry (tous les boutons sont des pills)"
+      },
+      "progress_track_radius": {
+        "value": "2px",
+        "usage": ".progress-track, .progress-fill"
+      },
+      "score_bar_radius": {
+        "value": "3px",
+        "usage": ".score-bar-bg, .score-bar-fill"
+      },
+      "tension_block_asymmetric": {
+        "value": "0 var(--radius-sm) var(--radius-sm) 0",
+        "computed": "0 12px 12px 0",
+        "usage": ".tension-block (radius uniquement à droite, accent sur le border-left coral)"
+      }
+    },
+    "borders": {
+      "option_default": "1px solid var(--white15)",
+      "option_hover": "1px solid rgba(244, 120, 90, 0.4)",
+      "option_selected": "1px solid var(--coral)",
+      "score_card": "1px solid var(--white15)",
+      "tension_block": "1px solid var(--white15)",
+      "tension_block_left_accent": "3px solid var(--coral)",
+      "question_block_result": "1px solid var(--white15)",
+      "cta_block": "1px solid rgba(244, 120, 90, 0.3)",
+      "btn_download_default": "1px solid rgba(244, 120, 90, 0.4)",
+      "btn_download_hover": "1px solid var(--coral)",
+      "btn_retry_default": "1px solid var(--white15)",
+      "btn_retry_hover": "1px solid var(--white40)",
+      "section_label_bottom": "1px solid var(--white15)"
+    }
+  },
+
+  "shadows": {
+    "btn_submit_hover": {
+      "value": "0 8px 30px rgba(244, 120, 90, 0.4)",
+      "usage": ".btn-submit:not(:disabled):hover",
+      "decomposed": {
+        "x": "0",
+        "y": "8px",
+        "blur": "30px",
+        "spread": "0",
+        "color": "rgba(244, 120, 90, 0.4) (coral à 40%)"
+      }
+    },
+    "btn_cta_hover": {
+      "value": "0 8px 30px rgba(244, 120, 90, 0.4)",
+      "usage": ".btn-cta:hover",
+      "_note": "Identique à btn_submit_hover"
+    },
+    "_note": "Aucune autre box-shadow ni aucune text-shadow dans le fichier source. La hiérarchie visuelle repose sur les borders subtiles, les opacités et les gradients."
+  },
+
+  "gradients": {
+    "linear": {
+      "card_gradient_main": {
+        "css_variable": "--card-gradient",
+        "value": "linear-gradient(135deg, #f4785a 0%, #f0a060 50%, #e8c870 100%)",
+        "stops": [
+          { "position": "0%", "color": "#f4785a", "rgb": "rgb(244, 120, 90)" },
+          { "position": "50%", "color": "#f0a060", "rgb": "rgb(240, 160, 96)" },
+          { "position": "100%", "color": "#e8c870", "rgb": "rgb(232, 200, 112)" }
+        ],
+        "angle": "135deg",
+        "usage": ".profile-card background (le bloc 'Ce qui te caractérise')"
+      },
+      "btn_primary_gradient": {
+        "value": "linear-gradient(135deg, var(--coral), #f0704a)",
+        "stops": [
+          { "position": "default", "color": "var(--coral) (#F4785A)" },
+          { "position": "default", "color": "#f0704a" }
+        ],
+        "angle": "135deg",
+        "usage": ".btn-submit, .btn-cta (gradient identique pour les deux CTAs principaux)"
+      },
+      "progress_fill_gradient": {
+        "value": "linear-gradient(90deg, var(--coral), var(--gold))",
+        "stops": [
+          { "position": "default", "color": "var(--coral) (#F4785A)" },
+          { "position": "default", "color": "var(--gold) (#E8A838)" }
+        ],
+        "angle": "90deg",
+        "usage": ".progress-fill (barre de progression du quiz)"
+      },
+      "cta_block_gradient": {
+        "value": "linear-gradient(135deg, rgba(244, 120, 90, 0.15), rgba(232, 168, 56, 0.15))",
+        "stops": [
+          { "position": "default", "color": "rgba(244, 120, 90, 0.15) (coral 15%)" },
+          { "position": "default", "color": "rgba(232, 168, 56, 0.15) (gold 15%)" }
+        ],
+        "angle": "135deg",
+        "usage": ".cta-block background"
+      }
+    },
+    "radial": {
+      "body_glow_top_left": {
+        "value": "radial-gradient(ellipse, rgba(244, 120, 90, 0.12) 0%, transparent 70%)",
+        "stops": [
+          { "position": "0%", "color": "rgba(244, 120, 90, 0.12)" },
+          { "position": "70%", "color": "transparent" }
+        ],
+        "shape": "ellipse",
+        "container": {
+          "selector": "body::before",
+          "position": "fixed",
+          "top": "-30%",
+          "left": "-20%",
+          "width": "70%",
+          "height": "70%",
+          "z_index": 0,
+          "pointer_events": "none"
+        },
+        "usage": "Halo coral diffus en haut à gauche du viewport"
+      },
+      "body_glow_bottom_right": {
+        "value": "radial-gradient(ellipse, rgba(100, 80, 200, 0.1) 0%, transparent 70%)",
+        "stops": [
+          { "position": "0%", "color": "rgba(100, 80, 200, 0.1)" },
+          { "position": "70%", "color": "transparent" }
+        ],
+        "shape": "ellipse",
+        "container": {
+          "selector": "body::after",
+          "position": "fixed",
+          "bottom": "-20%",
+          "right": "-20%",
+          "width": "60%",
+          "height": "60%",
+          "z_index": 0,
+          "pointer_events": "none"
+        },
+        "usage": "Halo violet/indigo diffus en bas à droite du viewport — crée la profondeur cosmique"
+      }
+    },
+    "pdf_gradients": {
+      "pdf_card_gradient": {
+        "value": "linear-gradient(135deg, #f4785a15, #e8a83815)",
+        "_note": "Notation hex 8-digit (#RRGGBBAA, 15 ≈ ~8% alpha). Utilisé uniquement dans le HTML d'export PDF."
+      }
+    }
+  },
+
+  "animations": {
+    "transitions": {
+      "option_all": {
+        "selector": ".option",
+        "property": "all",
+        "duration": "0.2s",
+        "easing": "ease",
+        "context": "Hover sur les options de réponse (background, border, color, transform)"
+      },
+      "btn_submit_all": {
+        "selector": ".btn-submit",
+        "property": "all",
+        "duration": "0.2s",
+        "easing": "ease",
+        "context": "Hover sur le bouton principal (transform + box-shadow)"
+      },
+      "btn_cta_all": {
+        "selector": ".btn-cta",
+        "property": "all",
+        "duration": "0.2s",
+        "easing": "ease",
+        "context": "Hover sur le CTA Calendly"
+      },
+      "btn_download_all": {
+        "selector": ".btn-download",
+        "property": "all",
+        "duration": "0.2s",
+        "easing": "ease",
+        "context": "Hover sur le bouton de téléchargement"
+      },
+      "btn_retry_all": {
+        "selector": ".btn-retry",
+        "property": "all",
+        "duration": "0.2s",
+        "easing": "ease",
+        "context": "Hover sur le bouton recommencer"
+      },
+      "progress_fill_width": {
+        "selector": ".progress-fill",
+        "property": "width",
+        "duration": "0.4s",
+        "easing": "ease",
+        "context": "Progression de la barre quand l'utilisateur sélectionne une réponse"
+      },
+      "score_bar_fill_width": {
+        "selector": ".score-bar-fill",
+        "property": "width",
+        "duration": "0.8s",
+        "easing": "ease",
+        "context": "Animation de remplissage des barres de score à l'affichage du résultat (plus lente que la progress-bar pour un effet 'révélation')"
+      }
+    },
+    "keyframes": {
+      "fadeUp": {
+        "definition": {
+          "from": {
+            "opacity": 0,
+            "transform": "translateY(16px)"
+          },
+          "to": {
+            "opacity": 1,
+            "transform": "translateY(0)"
+          }
+        },
+        "usage": ".question-block { animation: fadeUp 0.4s ease both; }",
+        "duration": "0.4s",
+        "easing": "ease",
+        "fill_mode": "both",
+        "stagger": {
+          "_note": "JS applique style.animationDelay = (i * 0.04) + 's' sur chaque question-block (cf. ligne 560)",
+          "increment": "0.04s par index"
+        }
+      }
+    },
+    "transforms_on_interaction": {
+      "option_hover": "translateX(4px)",
+      "btn_submit_hover": "translateY(-2px)",
+      "btn_cta_hover": "translateY(-2px)",
+      "btn_submit_disabled": "transform: none (réinitialisé)"
+    }
+  },
+
+  "layout": {
+    "container": {
+      "selector": ".page",
+      "max_width": "720px",
+      "margin": "0 auto",
+      "padding_desktop": "3rem 1.5rem 5rem",
+      "padding_mobile": "2rem 1rem 4rem (à 480px)",
+      "position": "relative",
+      "z_index": 1
+    },
+    "breakpoints": {
+      "mobile": {
+        "max_width": "480px",
+        "rules": [
+          ".score-grid { grid-template-columns: 1fr; }",
+          ".page { padding: 2rem 1rem 4rem; }"
+        ]
+      }
+    },
+    "grid_configurations": {
+      "score_grid": {
+        "selector": ".score-grid",
+        "display": "grid",
+        "grid_template_columns_desktop": "1fr 1fr",
+        "grid_template_columns_mobile": "1fr",
+        "gap": "10px",
+        "margin_bottom": "2.5rem"
+      }
+    },
+    "flex_configurations": {
+      "progress_wrap": {
+        "selector": ".progress-wrap",
+        "display": "flex",
+        "align_items": "center",
+        "gap": "12px",
+        "margin_bottom": "2.5rem",
+        "children": {
+          "progress_track": "flex: 1",
+          "progress_label": "min-width: 60px, text-align: right"
+        }
+      }
+    },
+    "global": {
+      "box_sizing": "border-box (universal *)",
+      "body_overflow_x": "hidden",
+      "body_min_height": "100vh"
+    }
+  },
+
+  "components": {
+    "option_card": {
+      "_description": "Carte d'option de réponse — utilisée 3x par question",
+      "states": {
+        "normal": {
+          "css_verbatim": ".option {\n  display: block;\n  width: 100%;\n  text-align: left;\n  background: var(--white08);\n  border: 1px solid var(--white15);\n  border-radius: var(--radius-sm);\n  padding: 1.125rem 1.25rem;\n  margin-bottom: 0.625rem;\n  font-size: 14px;\n  line-height: 1.7;\n  color: var(--white70);\n  cursor: pointer;\n  transition: all 0.2s ease;\n  font-family: 'DM Sans', sans-serif;\n}"
+        },
+        "hover": {
+          "css_verbatim": ".option:hover {\n  background: rgba(244,120,90,0.1);\n  border-color: rgba(244,120,90,0.4);\n  color: var(--white);\n  transform: translateX(4px);\n}"
+        },
+        "selected": {
+          "css_verbatim": ".option.selected {\n  background: rgba(244,120,90,0.15);\n  border-color: var(--coral);\n  color: var(--white);\n}",
+          "pseudo_before": ".option.selected::before {\n  content: '→ ';\n  color: var(--coral);\n  font-weight: 600;\n}"
+        }
+      }
+    },
+
+    "score_card": {
+      "_description": "Carte de score par dimension — affichée dans la grille 2x2 (1col en mobile)",
+      "container": {
+        "css_verbatim": ".score-card {\n  background: var(--white08);\n  border: 1px solid var(--white15);\n  border-radius: var(--radius-sm);\n  padding: 1rem 1.125rem;\n}"
+      },
+      "label": {
+        "css_verbatim": ".score-card-label {\n  font-size: 11px;\n  color: var(--white40);\n  margin-bottom: 0.625rem;\n  letter-spacing: 0.04em;\n  text-transform: uppercase;\n}"
+      },
+      "progress_bar_background": {
+        "css_verbatim": ".score-bar-bg {\n  background: var(--white15);\n  border-radius: 3px;\n  height: 4px;\n  margin-bottom: 0.5rem;\n}"
+      },
+      "progress_bar_fill": {
+        "css_verbatim": ".score-bar-fill {\n  height: 4px;\n  border-radius: 3px;\n  transition: width 0.8s ease;\n}",
+        "_inline_styles_from_js": "width: ${pct}% (calculé : Math.round((sc-3)/6*100)), background: ${meta.color} (couleur de la dimension)"
+      },
+      "level_label": {
+        "css_verbatim": ".score-level {\n  font-size: 13px;\n  font-weight: 500;\n  font-family: 'Syne', sans-serif;\n}",
+        "_inline_styles_from_js": "color: ${meta.color}",
+        "_possible_values": ["Point d'appui", "Zone de nuance", "À explorer"]
+      }
+    },
+
+    "btn_submit_cta": {
+      "_description": "Bouton principal 'Découvrir mon profil →' (sous le quiz)",
+      "normal": {
+        "css_verbatim": ".btn-submit {\n  width: 100%;\n  padding: 1.125rem;\n  border-radius: 50px;\n  border: none;\n  background: linear-gradient(135deg, var(--coral), #f0704a);\n  color: var(--white);\n  font-size: 16px;\n  font-weight: 600;\n  font-family: 'Syne', sans-serif;\n  cursor: pointer;\n  margin-top: 1rem;\n  transition: all 0.2s ease;\n  letter-spacing: 0.02em;\n}"
+      },
+      "disabled": {
+        "css_verbatim": ".btn-submit:disabled {\n  opacity: 0.3;\n  cursor: not-allowed;\n  transform: none;\n}"
+      },
+      "hover": {
+        "css_verbatim": ".btn-submit:not(:disabled):hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 30px rgba(244,120,90,0.4);\n}"
+      }
+    },
+
+    "btn_cta_calendly": {
+      "_description": "Bouton CTA Calendly (page de résultat)",
+      "normal": {
+        "css_verbatim": ".btn-cta {\n  display: inline-block;\n  padding: 0.875rem 2rem;\n  border-radius: 50px;\n  border: none;\n  background: linear-gradient(135deg, var(--coral), #f0704a);\n  color: var(--white);\n  font-size: 15px;\n  font-weight: 600;\n  font-family: 'Syne', sans-serif;\n  cursor: pointer;\n  text-decoration: none;\n  transition: all 0.2s ease;\n  letter-spacing: 0.02em;\n}"
+      },
+      "hover": {
+        "css_verbatim": ".btn-cta:hover {\n  transform: translateY(-2px);\n  box-shadow: 0 8px 30px rgba(244,120,90,0.4);\n}"
+      }
+    },
+
+    "btn_download": {
+      "_description": "Bouton secondaire 'Télécharger mes résultats'",
+      "normal": {
+        "css_verbatim": ".btn-download {\n  display: block;\n  width: 100%;\n  padding: 0.875rem;\n  border-radius: 50px;\n  border: 1px solid rgba(244,120,90,0.4);\n  background: transparent;\n  color: var(--coral);\n  font-size: 14px;\n  font-family: 'DM Sans', sans-serif;\n  cursor: pointer;\n  margin-top: 1rem;\n  transition: all 0.2s ease;\n}"
+      },
+      "hover": {
+        "css_verbatim": ".btn-download:hover {\n  background: rgba(244,120,90,0.1);\n  border-color: var(--coral);\n}"
+      }
+    },
+
+    "btn_retry": {
+      "_description": "Bouton tertiaire 'Recommencer'",
+      "normal": {
+        "css_verbatim": ".btn-retry {\n  display: block;\n  width: 100%;\n  padding: 0.875rem;\n  border-radius: 50px;\n  border: 1px solid var(--white15);\n  background: transparent;\n  color: var(--white40);\n  font-size: 14px;\n  font-family: 'DM Sans', sans-serif;\n  cursor: pointer;\n  margin-top: 1rem;\n  transition: all 0.2s ease;\n}"
+      },
+      "hover": {
+        "css_verbatim": ".btn-retry:hover {\n  border-color: var(--white40);\n  color: var(--white70);\n}"
+      }
+    },
+
+    "quiz_progress_bar": {
+      "_description": "Barre de progression en haut du quiz (12 questions)",
+      "wrap": {
+        "css_verbatim": ".progress-wrap {\n  display: flex;\n  align-items: center;\n  gap: 12px;\n  margin-bottom: 2.5rem;\n}"
+      },
+      "track": {
+        "css_verbatim": ".progress-track {\n  flex: 1;\n  height: 3px;\n  background: var(--white15);\n  border-radius: 2px;\n  overflow: hidden;\n}"
+      },
+      "fill": {
+        "css_verbatim": ".progress-fill {\n  height: 100%;\n  background: linear-gradient(90deg, var(--coral), var(--gold));\n  border-radius: 2px;\n  transition: width 0.4s ease;\n  width: 0%;\n}"
+      },
+      "label": {
+        "css_verbatim": ".progress-label {\n  font-size: 12px;\n  color: var(--white40);\n  white-space: nowrap;\n  min-width: 60px;\n  text-align: right;\n}"
+      }
+    },
+
+    "profile_card_anchor": {
+      "_description": "Bloc 'Ce qui te caractérise' — la carte avec gradient orange/gold qui contient le texte d'ancrage du profil",
+      "container": {
+        "css_verbatim": ".profile-card {\n  background: var(--card-gradient);\n  border-radius: var(--radius);\n  padding: 1.75rem;\n  margin-bottom: 1.25rem;\n}",
+        "_card_gradient_resolved": "linear-gradient(135deg, #f4785a 0%, #f0a060 50%, #e8c870 100%)"
+      },
+      "title_class_defined_but_unused_in_render": {
+        "css_verbatim": ".profile-card-title {\n  font-family: 'Syne', sans-serif;\n  font-size: 16px;\n  font-weight: 700;\n  color: var(--bg);\n  margin-bottom: 0.625rem;\n}",
+        "_note": "CETTE CLASSE EST DÉFINIE DANS LE CSS MAIS NON UTILISÉE DANS LE HTML RENDU. Le rendu actuel injecte uniquement <p class='profile-card-text'>${profile.anchor}</p>. À conserver pour cohérence ou à supprimer dans la nouvelle implémentation."
+      },
+      "text": {
+        "css_verbatim": ".profile-card-text {\n  font-size: 14px;\n  line-height: 1.75;\n  color: rgba(8,7,32,0.85);\n}"
+      }
+    },
+
+    "tension_block_attention": {
+      "_description": "Bloc 'Ce qui mérite attention' — carte avec accent coral à gauche",
+      "container": {
+        "css_verbatim": ".tension-block {\n  background: var(--white08);\n  border: 1px solid var(--white15);\n  border-left: 3px solid var(--coral);\n  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;\n  padding: 1.25rem;\n  margin-bottom: 1rem;\n}"
+      },
+      "title": {
+        "css_verbatim": ".tension-title {\n  font-family: 'Syne', sans-serif;\n  font-size: 14px;\n  font-weight: 600;\n  color: var(--coral);\n  margin-bottom: 0.5rem;\n}",
+        "_note": "Le titre est OPTIONNEL : pour les profils plats (équilibrés), tension.title vaut null et le bloc n'affiche que le texte."
+      },
+      "text": {
+        "css_verbatim": ".tension-text {\n  font-size: 14px;\n  line-height: 1.75;\n  color: var(--white70);\n}"
+      }
+    },
+
+    "question_block_result": {
+      "_description": "Classe pour rappels de question dans la page résultat (définie mais non utilisée par le rendu actuel — à conserver)",
+      "css_verbatim": ".question-block-result {\n  background: var(--white08);\n  border: 1px solid var(--white15);\n  border-radius: var(--radius-sm);\n  padding: 1.25rem;\n  margin-bottom: 0.75rem;\n}",
+      "_note": "CLASSE DÉFINIE DANS LE CSS MAIS NON UTILISÉE DANS LE HTML RENDU."
+    },
+
+    "cta_block": {
+      "_description": "Bloc CTA final 'Cette lucarne éclaire ta stratégie actuelle.'",
+      "container": {
+        "css_verbatim": ".cta-block {\n  background: linear-gradient(135deg, rgba(244,120,90,0.15), rgba(232,168,56,0.15));\n  border: 1px solid rgba(244,120,90,0.3);\n  border-radius: var(--radius);\n  padding: 2rem;\n  margin-top: 2.5rem;\n  text-align: center;\n}"
+      },
+      "title": {
+        "css_verbatim": ".cta-title {\n  font-family: 'Syne', sans-serif;\n  font-size: 20px;\n  font-weight: 700;\n  color: var(--white);\n  margin-bottom: 0.75rem;\n}"
+      },
+      "text": {
+        "css_verbatim": ".cta-text {\n  font-size: 14px;\n  line-height: 1.75;\n  color: var(--white70);\n  margin-bottom: 1.5rem;\n}"
+      }
+    },
+
+    "section_label_separator": {
+      "_description": "Label de section avec border-bottom (sépare les zones du résultat : 'Ce qui te caractérise' / 'Ce qui mérite attention')",
+      "css_verbatim": ".section-label {\n  font-size: 11px;\n  font-weight: 500;\n  letter-spacing: 0.1em;\n  text-transform: uppercase;\n  color: var(--white40);\n  border-bottom: 1px solid var(--white15);\n  padding-bottom: 0.625rem;\n  margin: 2rem 0 1.25rem;\n}"
+    },
+
+    "question_block_animated": {
+      "_description": "Wrapper de chaque question avec animation fadeUp staggered",
+      "css_verbatim": ".question-block {\n  margin-bottom: 3rem;\n  animation: fadeUp 0.4s ease both;\n}",
+      "_js_inline_style": "block.style.animationDelay = (i * 0.04) + 's' (cf. ligne 560 du fichier source)",
+      "question_num_inside": {
+        "css_verbatim": ".question-num {\n  font-size: 11px;\n  font-weight: 500;\n  letter-spacing: 0.1em;\n  text-transform: uppercase;\n  color: var(--coral);\n  margin-bottom: 0.75rem;\n}",
+        "_html_pattern": "<p class='question-num'>Situation ${i+1} sur 12</p>"
+      }
+    },
+
+    "background_glows": {
+      "_description": "Halos radiaux décoratifs en position fixed sur le body — créent l'ambiance cosmique",
+      "top_left_coral": {
+        "css_verbatim": "body::before {\n  content: '';\n  position: fixed;\n  top: -30%;\n  left: -20%;\n  width: 70%;\n  height: 70%;\n  background: radial-gradient(ellipse, rgba(244,120,90,0.12) 0%, transparent 70%);\n  pointer-events: none;\n  z-index: 0;\n}"
+      },
+      "bottom_right_purple": {
+        "css_verbatim": "body::after {\n  content: '';\n  position: fixed;\n  bottom: -20%;\n  right: -20%;\n  width: 60%;\n  height: 60%;\n  background: radial-gradient(ellipse, rgba(100,80,200,0.1) 0%, transparent 70%);\n  pointer-events: none;\n  z-index: 0;\n}"
+      }
+    }
+  },
+
+  "js_helpers_for_styling": {
+    "_note": "Le JS contient de la logique d'application de styles inline qu'il faut absolument préserver lors du portage.",
+    "score_bar_inline_style": "background:${meta.color} (couleur de la dimension)",
+    "score_bar_width_calculation": "const pct = Math.round((sc-3)/6*100);",
+    "score_level_inline_color": "color:${meta.color}",
+    "stagger_animation_delay": "block.style.animationDelay = (i * 0.04) + 's';",
+    "level_thresholds": {
+      "bas": "score <= 4",
+      "moyen": "score <= 6",
+      "élevé": "score > 6"
+    },
+    "level_labels": {
+      "élevé": "Point d'appui",
+      "moyen": "Zone de nuance",
+      "bas": "À explorer"
+    }
+  },
+
+  "external_dependencies": {
+    "google_fonts": {
+      "url": "https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap",
+      "families": ["Syne (400, 500, 600, 700)", "DM Sans (300, 400, 500 + italic 300, 400)"]
+    },
+    "_pdf_export_fonts": {
+      "url": "https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap",
+      "_note": "Subset différent chargé uniquement pour l'export PDF."
+    }
+  }
+}
