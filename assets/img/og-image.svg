@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#080720"/>
+      <stop offset="100%" stop-color="#0f0d35"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="20%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#F4785A" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#F4785A" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="85%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#6450C8" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#6450C8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F4785A"/>
+      <stop offset="100%" stop-color="#E8A838"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow1)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <text x="80" y="160" font-family="Syne, sans-serif" font-size="22" font-weight="500" letter-spacing="3" fill="#F4785A" text-transform="uppercase">JENNIFER PERRAULT — NAHARA COACHING</text>
+  <text x="80" y="280" font-family="Syne, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Tu te lèves avec</text>
+  <text x="80" y="380" font-family="Syne, sans-serif" font-size="78" font-weight="700" fill="url(#gold)">1000 idées.</text>
+  <text x="80" y="470" font-family="Syne, sans-serif" font-size="78" font-weight="700" fill="#ffffff">Le soir, zéro.</text>
+  <text x="80" y="560" font-family="DM Sans, sans-serif" font-size="26" fill="rgba(255,255,255,0.7)">Coaching pour entrepreneur·es neuroatypiques — HPI · TDAH · TSA</text>
+</svg>
