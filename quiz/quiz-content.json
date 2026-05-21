@@ -1,0 +1,333 @@
+{
+  "interface": {
+    "header": "Jennifer Perrault · Nahara Coaching",
+    "eyebrow": "Mini-évaluation",
+    "title": "Comment tu tiens — vraiment — quand la pression monte ?",
+    "title_html_original": "Comment tu tiens — <span>vraiment</span> — quand la pression monte ?",
+    "subtitle": "12 situations, 3 façons de les vivre. Pour chacune, choisis l'affirmation qui te ressemble le plus — sans réfléchir trop longtemps, la première réponse est souvent la bonne.",
+    "progress_label_format": "{n} / 12",
+    "question_label_format": "Situation {n} sur 12",
+    "submit_button": "Découvrir mon profil →",
+    "result_eyebrow": "Ce qui se joue pour toi en ce moment",
+    "result_title_label": "Ce qui se joue pour toi en ce moment",
+    "result_intro": "Voici ce que tes réponses révèlent — non pas un diagnostic, mais une petite lucarne sur ce qui se joue pour toi en ce moment.",
+    "section_characterizes": "Ce qui te caractérise",
+    "section_attention": "Ce qui mérite attention",
+    "cta_title": "Cette lucarne éclaire ta stratégie actuelle.",
+    "cta_text": "Elle est utile, mais elle te coûte cher quelque part.\n\nTu aimerais faire bouger ces lignes ? En 30 minutes, on peut déjà identifier le levier pour mieux respirer dans ton business.\n\nRéserve ton créneau. C'est offert, c'est direct, et ça pourrait bien être le point de bascule dont tu as besoin.",
+    "cta_text_html_original": "Elle est utile, mais elle te coûte cher quelque part.<br><br>Tu aimerais faire bouger ces lignes ? En 30 minutes, on peut déjà identifier le levier pour mieux respirer dans ton business.<br><br>Réserve ton créneau. C'est offert, c'est direct, et ça pourrait bien être le point de bascule dont tu as besoin.",
+    "cta_button": "Réserver mon coaching gratuit →",
+    "download_button": "Télécharger mes résultats",
+    "restart_button": "Recommencer",
+    "calendly_url": "https://calendly.com/jennifer-perrault/coaching-offert-tes-reflexes-sous-pression"
+  },
+  "dimensions": [
+    { "code": "stress", "label": "Accueil de la pression", "color": "#6B3FA0" },
+    { "code": "flex", "label": "Quand les repères bougent", "color": "#FFE66D" },
+    { "code": "resol", "label": "De l'obstacle à la solution", "color": "#9B8EF0" },
+    { "code": "rel", "label": "La relation aux autres", "color": "#5DCAA5" }
+  ],
+  "score_levels": [
+    { "key": "bas", "range": [1, 4], "label": "À explorer" },
+    { "key": "moyen", "range": [5, 6], "label": "Zone de nuance" },
+    { "key": "élevé", "range": [7, 9], "label": "Point d'appui" }
+  ],
+  "questions": [
+    {
+      "id": 1,
+      "dimension": "stress",
+      "text": null,
+      "label": "Situation 1 sur 12",
+      "options": [
+        { "text": "Même quand le Stress tente de m'envahir, je parviens à garder une distance suffisante pour que l'Énervement ne prenne pas le contrôle de ma voix ou de mes gestes.", "dimension": "stress", "points": 3 },
+        { "text": "Il y a des jours où l'Énervement réussit à se glisser dans mes réactions sous pression, et d'autres où je parviens à l'inviter à rester à la porte.", "dimension": "stress", "points": 2 },
+        { "text": "Dès que le Stress pointe son nez, l'Énervement a tendance à s'installer si vite que j'ai du mal à me souvenir comment agir autrement.", "dimension": "stress", "points": 1 }
+      ]
+    },
+    {
+      "id": 2,
+      "dimension": "stress",
+      "text": null,
+      "label": "Situation 2 sur 12",
+      "options": [
+        { "text": "Face aux difficultés, je sais créer un espace de sécurité autour de moi où le Calme peut s'exprimer, ce qui m'évite d'être aspiré par l'agitation ambiante.", "dimension": "stress", "points": 3 },
+        { "text": "Le Calme est un allié précieux mais parfois capricieux : il est présent pour les petites secousses, mais il lui arrive de m'abandonner lors des grands séismes.", "dimension": "stress", "points": 2 },
+        { "text": "L'agitation des situations difficiles prend généralement toute la place, ne laissant que de très rares miettes pour que le Calme puisse se manifester.", "dimension": "stress", "points": 1 }
+      ]
+    },
+    {
+      "id": 3,
+      "dimension": "stress",
+      "text": null,
+      "label": "Situation 3 sur 12",
+      "options": [
+        { "text": "J'ai développé une forme de boussole intérieure qui me permet, même au cœur du chaos, de trouver le chemin vers une issue qui respecte mes valeurs.", "dimension": "stress", "points": 3 },
+        { "text": "Dans les tempêtes, il m'arrive de perdre le cap ; je finis par m'en sortir, mais j'ai parfois l'impression que c'est davantage dû au hasard qu'à mes propres choix.", "dimension": "stress", "points": 2 },
+        { "text": "Quand une situation devient difficile, les murs semblent se refermer et je perds de vue les compétences qui pourraient m'aider à ouvrir de nouvelles portes.", "dimension": "stress", "points": 1 }
+      ]
+    },
+    {
+      "id": 4,
+      "dimension": "flex",
+      "text": null,
+      "label": "Situation 4 sur 12",
+      "options": [
+        { "text": "Le Changement arrive souvent comme une tempête qui secoue mes racines ; il me faut beaucoup d'énergie pour retrouver mon équilibre après son passage.", "dimension": "flex", "points": 1 },
+        { "text": "Le Changement me demande un temps d'adaptation : j'ai besoin de comprendre ce qu'il m'apporte avant de lui laisser une place dans mon quotidien.", "dimension": "flex", "points": 2 },
+        { "text": "J'accueille le Changement comme un souffle d'air frais qui vient dépoussiérer mes habitudes et m'ouvrir à d'autres manières d'être.", "dimension": "flex", "points": 3 }
+      ]
+    },
+    {
+      "id": 5,
+      "dimension": "flex",
+      "text": null,
+      "label": "Situation 5 sur 12",
+      "options": [
+        { "text": "L'Inconnu se présente souvent à moi comme un invité inquiétant ; je préfère rester sur les terres familières où je connais chaque recoin.", "dimension": "flex", "points": 1 },
+        { "text": "L'Inconnu m'intimide un peu au début, mais si j'emporte avec moi quelques repères solides, je finis par l'apprivoiser avec le temps.", "dimension": "flex", "points": 2 },
+        { "text": "Je vois les situations inconnues comme des pages blanches qui m'invitent à écrire de nouveaux chapitres de mon histoire sans a priori.", "dimension": "flex", "points": 3 }
+      ]
+    },
+    {
+      "id": 6,
+      "dimension": "flex",
+      "text": null,
+      "label": "Situation 6 sur 12",
+      "options": [
+        { "text": "Une fois que j'ai tissé une conviction qui me semble juste, je la protège avec détermination contre les tentatives d'érosion par des avis extérieurs.", "dimension": "flex", "points": 1 },
+        { "text": "Je reste volontiers fidèle à mes idées, sauf si une nouvelle perspective parvient à me démontrer qu'elle servirait mieux mes intentions.", "dimension": "flex", "points": 2 },
+        { "text": "Je laisse volontiers mes conclusions évoluer ; j'aime l'idée que mon avis puisse être un chantier permanent plutôt qu'un monument figé.", "dimension": "flex", "points": 3 }
+      ]
+    },
+    {
+      "id": 7,
+      "dimension": "resol",
+      "text": null,
+      "label": "Situation 7 sur 12",
+      "options": [
+        { "text": "L'Inquiétude écrit des scénarios de catastrophes si bruyants que j'ai beaucoup de mal à entendre la voix de mes compétences de résolution.", "dimension": "resol", "points": 1 },
+        { "text": "J'écoute les mises en garde de l'Inquiétude, mais j'essaie de ne pas la laisser devenir la seule narratrice de la situation.", "dimension": "resol", "points": 2 },
+        { "text": "Face à un défi, je refuse de laisser l'Inquiétude monopoliser la parole ; je consacre mon énergie à dessiner les contours d'une issue possible.", "dimension": "resol", "points": 3 }
+      ]
+    },
+    {
+      "id": 8,
+      "dimension": "resol",
+      "text": null,
+      "label": "Situation 8 sur 12",
+      "options": [
+        { "text": "L'Évitement me semble souvent être la seule issue sûre, même si je sens que cela donne au Problème un territoire de plus en plus vaste dans ma vie.", "dimension": "resol", "points": 1 },
+        { "text": "Selon la taille du Problème, il m'arrive de faire un détour pour me préparer ou d'attendre d'avoir de meilleurs alliés avant de faire face.", "dimension": "resol", "points": 2 },
+        { "text": "Je préfère regarder le Problème droit dans les yeux dès qu'il surgit, afin de ne pas lui laisser le temps de s'installer ou de grandir dans mon dos.", "dimension": "resol", "points": 3 }
+      ]
+    },
+    {
+      "id": 9,
+      "dimension": "resol",
+      "text": null,
+      "label": "Situation 9 sur 12",
+      "options": [
+        { "text": "Mes émotions prennent souvent le siège du conducteur lors des décisions, laissant peu de place à ma pensée réflexive pour s'exprimer.", "dimension": "resol", "points": 1 },
+        { "text": "L'intensité de ce que je ressens vient parfois troubler la surface de mes réflexions, rendant la décision plus floue pendant un certain temps.", "dimension": "resol", "points": 2 },
+        { "text": "Je sais faire la distinction entre ce que je ressens sur le moment et ce qui est juste de décider ; mes émotions sont des consultantes, pas des dirigeantes.", "dimension": "resol", "points": 3 }
+      ]
+    },
+    {
+      "id": 10,
+      "dimension": "rel",
+      "text": null,
+      "label": "Situation 10 sur 12",
+      "options": [
+        { "text": "Le talent de tisser des liens est très présent chez moi ; je sais naturellement ouvrir des portes qui invitent les autres à entrer dans mon cercle.", "dimension": "rel", "points": 3 },
+        { "text": "Ma capacité à créer des liens dépend du contexte ; il me faut parfois un temps d'observation avant de laisser la place à une nouvelle relation.", "dimension": "rel", "points": 2 },
+        { "text": "La Réserve ou la Prudence occupent souvent tout l'espace lors de nouvelles rencontres, ce qui rend l'accès au lien plus long et plus complexe.", "dimension": "rel", "points": 1 }
+      ]
+    },
+    {
+      "id": 11,
+      "dimension": "rel",
+      "text": null,
+      "label": "Situation 11 sur 12",
+      "options": [
+        { "text": "L'échange avec les autres est une véritable nourriture pour moi ; je saisis presque chaque occasion pour engager une conversation et découvrir l'histoire de mon interlocuteur.", "dimension": "rel", "points": 3 },
+        { "text": "Mon goût pour la discussion fluctue ; selon mon énergie, je peux être très moteur dans l'échange ou préférer rester en retrait.", "dimension": "rel", "points": 2 },
+        { "text": "Le Silence ou le besoin d'être seul l'emportent souvent sur l'envie de parler ; l'interaction sociale me demande un effort qui dépasse mon plaisir immédiat.", "dimension": "rel", "points": 1 }
+      ]
+    },
+    {
+      "id": 12,
+      "dimension": "rel",
+      "text": null,
+      "label": "Situation 12 sur 12",
+      "options": [
+        { "text": "Je cultive naturellement une atmosphère de confiance qui invite les autres à déposer leurs histoires et leurs secrets entre mes mains.", "dimension": "rel", "points": 3 },
+        { "text": "Certaines personnes perçoivent mon écoute et se confient, tandis que pour d'autres, je garde une distance qui ne favorise pas les confidences.", "dimension": "rel", "points": 2 },
+        { "text": "L'Espace de Sécurité que je propose est souvent restreint ; les autres perçoivent sans doute que ce n'est pas le moment ou l'endroit pour se livrer.", "dimension": "rel", "points": 1 }
+      ]
+    }
+  ],
+  "profiles": [
+    {
+      "key": "stress-flex",
+      "type": "combinatory",
+      "appui": "stress",
+      "tension_dim": "flex",
+      "title": "Je tiens, mais je résiste au mouvement",
+      "anchor": "Tu as développé une vraie capacité à tenir sous pression — l'Énervement ne prend pas facilement les commandes, et tu gardes un fil même quand les situations se compliquent. C'est une force réelle, construite souvent à force d'expériences difficiles traversées.",
+      "tension_title": "Solidité qui se fragilise quand tout bouge",
+      "tension_text": "Tenir sous pression ne suffit pas toujours — il faut aussi savoir changer de cap en plein vol. Peut-être qu'il t'arrive, dans ces moments-là, de t'accrocher à une approche qui ne fonctionne plus, parce que la lâcher semblerait perdre le seul appui qui te reste ? Comme si s'adapter au milieu de la tempête demandait une énergie que tu n'as plus, une fois que tu as mobilisé tout ce qu'il faut pour tenir.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "stress-resol",
+      "type": "combinatory",
+      "appui": "stress",
+      "tension_dim": "resol",
+      "title": "Je tiens, mais je n'avance pas",
+      "anchor": "Tu as développé une vraie capacité à tenir sous pression — l'Énervement ne prend pas facilement les commandes, et tu gardes un fil même quand les situations se compliquent. C'est une force réelle, construite souvent à force d'expériences difficiles traversées.",
+      "tension_title": "Tenir sans avancer",
+      "tension_text": "Tenir, c'est déjà beaucoup. Mais il y a peut-être des moments où tu te surprends à endurer une situation sans vraiment trouver le chemin pour la dénouer ? Comme si l'Inquiétude ou l'Évitement occupaient le terrain juste assez pour empêcher le passage à l'action — non pas par manque de courage, mais parce que sous pression, la résolution demande une disponibilité intérieure que le stress a déjà en partie confisquée.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "stress-rel",
+      "type": "combinatory",
+      "appui": "stress",
+      "tension_dim": "rel",
+      "title": "Je tiens, mais je tiens seul(e)",
+      "anchor": "Tu as développé une vraie capacité à tenir sous pression — l'Énervement ne prend pas facilement les commandes, et tu gardes un fil même quand les situations se compliquent. C'est une force réelle, construite souvent à force d'expériences difficiles traversées.",
+      "tension_title": "Robustesse solitaire",
+      "tension_text": "Mais tenir seul(e) a un coût que l'on ne mesure pas toujours. Peut-être qu'au fil du temps, tu as appris que tu pouvais compter sur toi-même — et un peu moins sur les autres ? Comme si demander du soutien, laisser quelqu'un entrer dans ton espace de pression, risquait de fragiliser l'équilibre que tu as mis tant d'énergie à construire. Et pourtant, les autres ne sont pas forcément une charge supplémentaire — ils peuvent aussi être un soutien que tu ne t'autorises pas encore vraiment.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "flex-stress",
+      "type": "combinatory",
+      "appui": "flex",
+      "tension_dim": "stress",
+      "title": "Je m'adapte, mais je me perds dans la tempête",
+      "anchor": "Tu as une vraie capacité à accueillir le Changement — les situations inconnues ne te figent pas, et tu sais laisser tes convictions évoluer quand une nouvelle perspective le mérite. Cette souplesse est une ressource rare, surtout dans des contextes qui bougent vite.",
+      "tension_title": "Agilité sans ancre",
+      "tension_text": "Mais peut-être que cette capacité à t'adapter a une face cachée : quand la pression monte vraiment, quand le Stress s'installe durablement, tu pourrais avoir du mal à trouver un point fixe auquel t'accrocher ? Comme si ton agilité, qui est une force dans les contextes fluides, te laissait sans ancre dans les moments où ce dont tu as besoin c'est justement de tenir — de ne pas bouger, de résister, de rester là.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "flex-resol",
+      "type": "combinatory",
+      "appui": "flex",
+      "tension_dim": "resol",
+      "title": "Je m'adapte, mais je reste en mouvement",
+      "anchor": "Tu as une vraie capacité à accueillir le Changement — les situations inconnues ne te figent pas, et tu sais laisser tes convictions évoluer quand une nouvelle perspective le mérite. Cette souplesse est une ressource rare, surtout dans des contextes qui bougent vite.",
+      "tension_title": "L'angle mort du rebond permanent",
+      "tension_text": "Mais il y a peut-être une frontière ténue entre s'adapter et contourner ? Quand un problème se présente, ton agilité pourrait parfois t'offrir tellement de chemins alternatifs que tu passes à côté du chemin qui mène directement à ce qui mérite d'être vraiment regardé. Comme si la flexibilité devenait une façon naturelle de rester en mouvement — sans forcément s'arrêter là où quelque chose demande à être résolu.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "flex-rel",
+      "type": "combinatory",
+      "appui": "flex",
+      "tension_dim": "rel",
+      "title": "Je m'adapte, mais sans m'ancrer dans les autres",
+      "anchor": "Tu as une vraie capacité à accueillir le Changement — les situations inconnues ne te figent pas, et tu sais laisser tes convictions évoluer quand une nouvelle perspective le mérite. Cette souplesse est une ressource rare, surtout dans des contextes qui bougent vite.",
+      "tension_title": "Le rythme qui laisse peu de place",
+      "tension_text": "Mais peut-être que ce rythme de rebond permanent laisse moins de place aux relations qu'on ne le croit ? Quand une solution succède si naturellement à une autre, il y a peut-être moins d'espace — et moins de temps — pour vraiment investir dans les autres. Non pas par manque d'intérêt, mais parce que l'autonomie devient le réflexe par défaut, là où compter sur quelqu'un aurait pu être une option.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "resol-stress",
+      "type": "combinatory",
+      "appui": "resol",
+      "tension_dim": "stress",
+      "title": "J'agis, mais la pression me déborde",
+      "anchor": "Tu as une vraie capacité à faire face aux obstacles — l'Inquiétude ne monopolise pas la parole, l'Évitement n'est pas ton réflexe par défaut, et tu sais garder tes émotions comme des consultantes plutôt que comme des dirigeantes. C'est une force réelle, qui te permet d'avancer là où d'autres restent bloqués.",
+      "tension_title": "L'action court-circuitée par la pression",
+      "tension_text": "Mais peut-être que cette capacité à agir a une condition implicite que tu n'as pas toujours identifiée : elle fonctionne bien quand le contexte reste suffisamment stable pour que tu puisses réfléchir et décider. Quand la pression monte vraiment — quand le Stress s'installe et que l'Énervement commence à occuper le terrain — il se pourrait que tes ressources habituelles de résolution deviennent moins accessibles, comme si la pression court-circuitait le chemin entre ce que tu sais faire et ce que tu arrives à faire dans l'instant.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "resol-flex",
+      "type": "combinatory",
+      "appui": "resol",
+      "tension_dim": "flex",
+      "title": "J'agis, mais sur mon terrain de prédilection",
+      "anchor": "Tu as une vraie capacité à faire face aux obstacles — l'Inquiétude ne monopolise pas la parole, l'Évitement n'est pas ton réflexe par défaut, et tu sais garder tes émotions comme des consultantes plutôt que comme des dirigeantes. C'est une force réelle, qui te permet d'avancer là où d'autres restent bloqués.",
+      "tension_title": "La sécurité des solutions connues",
+      "tension_text": "Mais peut-être que cette capacité à agir amène parfois à appliquer des solutions qui ont déjà fait leurs preuves — même quand le terrain a changé ? Non pas par manque de ressources, mais parce que sous pression, l'approche connue est plus rassurante, plus immédiatement accessible. Et pendant ce temps, une approche différente — pas forcément meilleure, mais peut-être plus simple ou plus adaptée à la situation — attend dans l'angle mort, sans jamais vraiment être considérée.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "resol-rel",
+      "type": "combinatory",
+      "appui": "resol",
+      "tension_dim": "rel",
+      "title": "J'agis, mais en solitaire",
+      "anchor": "Tu as une vraie capacité à faire face aux obstacles — l'Inquiétude ne monopolise pas la parole, l'Évitement n'est pas ton réflexe par défaut, et tu sais garder tes émotions comme des consultantes plutôt que comme des dirigeantes. C'est une force réelle, qui te permet d'avancer là où d'autres restent bloqués.",
+      "tension_title": "L'autonomie comme réflexe par défaut",
+      "tension_text": "Mais peut-être que cette capacité à résoudre par toi-même a fini par devenir le chemin par défaut — même dans les situations où les autres auraient pu être une ressource utile ? Comme si impliquer quelqu'un d'autre ajoutait une complexité qui ralentit, alors que tu sais déjà trouver le chemin seul(e). Ce n'est pas forcément un choix conscient — c'est peut-être simplement que l'autonomie dans la résolution est tellement naturelle qu'elle laisse peu d'espace pour envisager que deux regards valent parfois mieux qu'un.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "rel-stress",
+      "type": "combinatory",
+      "appui": "rel",
+      "tension_dim": "stress",
+      "title": "Je connecte, mais la pression change mes priorités",
+      "anchor": "Tu as une vraie capacité à créer des liens — les autres se sentent à l'aise avec toi, ils te confient facilement leurs histoires, et l'échange est une nourriture réelle pour toi. C'est une ressource précieuse, qui crée autour de toi un tissu relationnel que beaucoup envient.",
+      "tension_title": "Le lien comme réflexe de régulation",
+      "tension_text": "Mais peut-être qu'en situation de pression, le réflexe de chercher ou de préserver le lien prend parfois le dessus sur ce que la situation demande vraiment ? Comme si, quand le Stress monte, la priorité devenait instinctivement de maintenir la connexion avec les autres — rassurer, ne pas décevoir, rester dans le lien — même quand ce n'est pas ce qui résoudrait le problème, ou même quand ça va à l'encontre de la meilleure décision à prendre.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "rel-flex",
+      "type": "combinatory",
+      "appui": "rel",
+      "tension_dim": "flex",
+      "title": "Je connecte, mais je protège le lien du mouvement",
+      "anchor": "Tu as une vraie capacité à créer des liens — les autres se sentent à l'aise avec toi, ils te confient facilement leurs histoires, et l'échange est une nourriture réelle pour toi. C'est une ressource précieuse, qui crée autour de toi un tissu relationnel que beaucoup envient.",
+      "tension_title": "Chaleur relationnelle, repères fixes",
+      "tension_text": "Mais peut-être que cette chaleur relationnelle coexiste avec une difficulté à bouger quand le contexte change — et que cette tension crée parfois des frictions dans tes relations elles-mêmes ? Comme si les liens que tu tisses reposaient implicitement sur une certaine stabilité — une façon d'être ensemble, des habitudes partagées, des repères communs — et que quand ces repères bougent, tu as du mal à laisser la relation évoluer avec eux.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "rel-resol",
+      "type": "combinatory",
+      "appui": "rel",
+      "tension_dim": "resol",
+      "title": "Je connecte, même quand ça n'est pas là que ça se passe",
+      "anchor": "Tu as une vraie capacité à créer des liens — les autres se sentent à l'aise avec toi, ils te confient facilement leurs histoires, et l'échange est une nourriture réelle pour toi. C'est une ressource précieuse, qui crée autour de toi un tissu relationnel que beaucoup envient.",
+      "tension_title": "Le lien comme espace de confort",
+      "tension_text": "Mais peut-être que cette facilité relationnelle devient parfois une façon de rester dans un espace suffisamment confortable pour que les obstacles restent dans l'angle mort un peu plus longtemps que nécessaire ? Comme si la connexion avec les autres — échanger, partager, être ensemble — occupait naturellement la place que la résolution aurait pu prendre. Non pas par manque de lucidité, mais parce que le lien avec les autres est tellement nourrissant.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "balanced-high",
+      "type": "flat",
+      "appui": null,
+      "tension_dim": null,
+      "title": "Un profil équilibré et solide",
+      "anchor": "Tes réponses dessinent un profil remarquablement solide sur l'ensemble des dimensions explorées. Chacune semble être une ressource sur laquelle tu peux t'appuyer.",
+      "tension_title": null,
+      "tension_text": "Ce quiz n'explore que quatre dimensions de ton intelligence émotionnelle — et il y en a bien d'autres qui pourraient enrichir encore cette lecture.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "balanced-low",
+      "type": "flat",
+      "appui": null,
+      "tension_dim": null,
+      "title": "Un profil équilibré sous tension",
+      "anchor": "Tes réponses suggèrent que cette période est peut-être particulièrement coûteuse — comme si plusieurs dimensions étaient sollicitées en même temps, sans vraiment pouvoir s'appuyer l'une sur l'autre.",
+      "tension_title": null,
+      "tension_text": "Ce que tu traverses mérite d'être regardé avec bienveillance et sans précipitation.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    },
+    {
+      "key": "balanced-nuance",
+      "type": "flat",
+      "appui": null,
+      "tension_dim": null,
+      "title": "Un profil équilibré en nuance",
+      "anchor": "Tes réponses dessinent un profil nuancé — chaque dimension est présente, mais aucune ne s'impose vraiment comme un point d'appui solide. Peut-être que selon les contextes, selon les jours, tu te sens tantôt à l'aise, tantôt moins ?",
+      "tension_title": null,
+      "tension_text": "Ce quiz n'explore que quatre dimensions de ton intelligence émotionnelle — et il y en a bien d'autres qui pourraient aider à mieux identifier où se trouvent tes vraies ressources.\n\nEst-ce que ça résonne avec ce que tu vis ?"
+    }
+  ],
+  "_meta": {
+    "source_file": "fichiersourcequiz.html",
+    "source_url": "https://quiz.khalil.dedyn.io/",
+    "notes": [
+      "Les questions n'ont pas de texte de prompt dans la source — chaque 'question' est uniquement 3 affirmations à choisir, précédées du label 'Situation N sur 12'. Le champ 'text' est donc null et 'label' contient le seul texte affiché.",
+      "Dans la source, les options sont rendues dans un ordre aléatoire (shuffle) à chaque chargement. L'ordre conservé ici est celui du code source.",
+      "Toutes les options d'une même question partagent la même dimension — le champ 'dimension' est dupliqué sur chaque option pour respecter la structure demandée.",
+      "Les profils combinatoires (12) sont identifiés par la clé 'appui-tension'. Les profils plats (3) sont déclenchés quand spread = max-min ≤ 2 : balanced-high (tous niveaux 'élevé'), balanced-low (tous 'bas'), balanced-nuance (le reste).",
+      "Le code source utilise '\\n\\n' dans tension_text et le convertit en '<br>' au rendu — les '\\n\\n' sont conservés verbatim ici (pas de HTML dans la source, donc pas de champ html_original).",
+      "Score levels : la fonction level(s) du source utilise les seuils s≤4 → 'bas', s≤6 → 'moyen', s>6 → 'élevé'. Score min réel = 3, max réel = 9 (3 questions × 1-3 points par dimension)."
+    ]
+  }
+}
