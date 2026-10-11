@@ -320,7 +320,7 @@
   ],
   "_meta": {
     "source_file": "fichiersourcequiz.html",
-    "source_url": "https://quiz.khalil.dedyn.io/",
+    "source_url": "https://nahara-coaching.com/quiz/",
     "notes": [
       "Les questions n'ont pas de texte de prompt dans la source — chaque 'question' est uniquement 3 affirmations à choisir, précédées du label 'Situation N sur 12'. Le champ 'text' est donc null et 'label' contient le seul texte affiché.",
       "Dans la source, les options sont rendues dans un ordre aléatoire (shuffle) à chaque chargement. L'ordre conservé ici est celui du code source.",
