@@ -60,9 +60,9 @@ Dans `index.html`, section "Qui je suis" : la div `.about-photo` affiche les ini
 Ajouter le fichier dans `assets/img/jennifer.jpg` (recommandé : carré, 800×800px minimum, optimisé < 150 KB).
 
 ### 4. Vérifier les liens
-- **Calendly** : `https://calendly.com/jennifer-perrault/call-decouverte` — confirmer que le slug est correct.
+- **Calendly** : `https://calendly.com/jennifer-perrault/coaching-offert-tes-reflexes-sous-pression` — confirmer que le slug est correct.
 - **Quiz** : `https://quiz.khalil.dedyn.io` — à remplacer par l'URL définitive du quiz une fois déployé sur le domaine final.
-- **LinkedIn** : `https://www.linkedin.com/in/jennifer-perrault/` — vérifier que c'est la bonne URL du profil.
+- **LinkedIn** : `https://www.linkedin.com/in/jennifer-perrault-coach/` — vérifier que c'est la bonne URL du profil.
 
 Les liens apparaissent à plusieurs endroits dans `index.html`, `mentions-legales.html`, `confidentialite.html`, `404.html`. Utilise « Rechercher / Remplacer » dans ton éditeur.
 
